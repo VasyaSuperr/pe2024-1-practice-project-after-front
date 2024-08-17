@@ -29,14 +29,16 @@ class Header extends React.Component {
       return (
         <>
           <div className={styles.userInfo}>
-            <img
-              src={
-                this.props.data.avatar === 'anon.png'
-                  ? CONSTANTS.ANONYM_IMAGE_PATH
-                  : `${CONSTANTS.publicURL}${this.props.data.avatar}`
-              }
-              alt='user'
-            />
+            <Link to='/'>
+              <img
+                src={
+                  this.props.data.avatar === 'anon.png'
+                    ? CONSTANTS.ANONYM_IMAGE_PATH
+                    : `${CONSTANTS.publicURL}${this.props.data.avatar}`
+                }
+                alt='user'
+              />
+            </Link>
             <span>{`Hi, ${this.props.data.displayName}`}</span>
             <img
               src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`}
